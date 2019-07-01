@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+void binario(int n){
+	if(n == 1){
+		printf("1");
+		return;
+	}
+	int resto;
+	resto = n % 2;
+	binario(n / 2);
+	printf("%d", resto);
+}
+
+int main(){
+	setlocale(LC_ALL, "Portuguese");
+	int num;
+	
+	printf("\nDigite um número: ");
+	scanf("%d", &num);
+	binario(num);
+	
+	return 0;
+}
